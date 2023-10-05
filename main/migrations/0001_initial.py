@@ -40,7 +40,12 @@ class Migration(migrations.Migration):
                 ("created", models.DateTimeField(auto_now_add=True)),
                 ("deadline", models.DateTimeField(blank=True, null=True)),
                 ("status", models.BooleanField(default=False)),
-                ("tags", models.ManyToManyField(related_name="tasks", to="main.tag")),
+                (
+                    "tags",
+                    models.ManyToManyField(
+                        related_name="tasks", to="main.tag"
+                    ),
+                ),
             ],
             options={
                 "ordering": ["status", "created"],
